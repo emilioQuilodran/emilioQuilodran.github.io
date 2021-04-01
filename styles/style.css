@@ -1,7 +1,120 @@
-.font-title {
-    font-family: 'IBM Plex Sans', sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body {
+:root {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    --color-primary:#060A24;
+    --color-secondary: white;
+    --color-link-active: rgba(6,10,36,0.56);
+    --bkg-primary: linear-gradient(90deg, rgba(0,0,163,1) 0%, rgba(0,0,255,1) 100%);
+    --bkg-secondary: rgba(0,0,236,1);
+    --btn-bg-color: #00F3BB;
+    --btn-bg-hover: linear-gradient(90deg, rgba(0,240,184,1) 0%, rgba(0,0,254,1) 100%);
+}
+
+body * {
+    transition: .3s;
+}
+
+.font-title {
     font-family: 'IBM Plex Mono', monospace;
+}
+
+h1 { font-size: 4.0rem; }
+h2 { font-size: 3.6rem; }
+h3 { font-size: 2.8rem; }
+h4 { font-size: 2.2rem; }
+h5 { font-size: 1.8rem; }
+h6 { font-size: 1.6rem; }
+
+/*
+    UI components
+*/
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 1.6% 4.1%;
+    font-size: 1.1rem;
+    background: var(--btn-bg-color);
+}
+
+.btn:hover {
+    background: var(--btn-bg-hover);
+    color: var(--color-secondary);
+}
+
+.text-link {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.text-link:hover{
+    text-decoration: line-through;
+    color: var(--btn-bg-color)
+}
+
+.text-link:active, .text-link.active {
+    text-decoration: line-through;
+    color: var(--color-link-active);
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+#menu-toggle, .header .menu-desktop { 
+    display: none;
+}
+#menu-toggle:not(:checked) ~ .burger-menu .fa-times,
+#menu-toggle:not(:checked) ~ .menu-mobile {
+    display: none;
+}
+#menu-toggle:checked ~ .burger-menu .fa-bars {
+   display: none;
+}
+
+#menu-toggle:checked ~ .menu-mobile {
+    display: block;
+    animation: slide .3s ease-out;
+}
+
+.header .burger-menu {
+    cursor: pointer;
+}
+
+.header .menu-mobile {
+    position: fixed;
+    top: 46px;
+    background:var(--bkg-secondary);
+    left: 0;
+    right: 0;
+}
+.header .menu-mobile ul {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header .menu-mobile ul li a {
+    display: block;
+    color: var(--color-secondary);
+    text-decoration: none;
+    padding: 15px;
+}
+
+.header .menu-mobile ul li a:hover {
+    background: rgb(0, 0, 201);;
+}
+
+@keyframes slide {
+    0% { opacity: 0; transform: translateX(-100%) }
+    100% { opacity: 1; transform: translateX(0); }
 }
