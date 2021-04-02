@@ -181,6 +181,7 @@ a {text-decoration: none;}
     margin-top: 15px;
 }
 .topics .news {
+    text-align: center;
     padding: 15% 4%;
     background: var(--bkg-primary);
 }
