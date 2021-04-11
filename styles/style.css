@@ -224,6 +224,8 @@ a {text-decoration: none;}
 
 /*
     Responsive 
+    TODO: Generar version desktop entre
+    678 y 980
 */
 @media screen and (min-width: 800px) {
     .btn {
@@ -280,9 +282,7 @@ a {text-decoration: none;}
         grid-auto-columns: 1fr;
         grid-gap: 3em 4.5em;
     }
-    .about-us {
-         margin-bottom: 40px;
-    }
+   
     .about-us .container {
         display:flex;
         width: 900px;
@@ -290,14 +290,12 @@ a {text-decoration: none;}
     }
     .about-us img {
         width: 40%;
-        top: 0;
     }
     .about-us .container > div {
         position: relative;
         top: 0;
-        margin-top: 10%;
+        margin-top: 5%;
         width: 50%;
-        align-self: center;
     }
     .about-us h2, .chapters h2, .guests h2, .topics h2 {
         margin: 2% 12.8%;
@@ -334,6 +332,9 @@ a {text-decoration: none;}
     .topics .news h3 {
         font-size: 2.8rem;
         margin-bottom: 3%;
+    }
+    .chapters {
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     }
     .footer {
         display: flex;
