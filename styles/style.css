@@ -217,7 +217,38 @@ a {text-decoration: none;}
     justify-content: space-evenly;
 }
 
- @keyframes slide {
+@keyframes slide {
     0% { opacity: 0; transform: translateX(-100%) }
     100% { opacity: 1; transform: translateX(0); }
+}
+
+/*
+    Responsive 
+*/
+@media screen and (min-width: 800px) {
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+    }
+    .container, .header {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    .header {
+        position: relative;
+        padding: 0;
+    }
+    .header .menu-mobile, header .menu-toggle, .header .burger-menu {
+        display: none;
+    }
+    .header .menu-desktop {
+        display: block;
+    }
+    .header .menu-desktop ul {
+        list-style: none;
+    }
+    .header .menu-desktop ul li {
+        display: inline-block;
+        margin-left: 20px;
+    }
 }
