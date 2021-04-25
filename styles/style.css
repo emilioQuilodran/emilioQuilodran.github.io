@@ -222,11 +222,6 @@ a {text-decoration: none;}
     100% { opacity: 1; transform: translateX(0); }
 }
 
-/*
-    Responsive 
-    TODO: Generar version desktop entre
-    678 y 980
-*/
 @media (min-width: 680px) and (max-width: 900px) {
     .chapters .podcasts {
         display: grid;
